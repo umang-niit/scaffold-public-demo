@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "babel-polyfill": "^6.26.0",
     "css-loader": "^6.7.1",
+    "dotenv-webpack": "^7.1.0",
     "html-webpack-plugin": "^5.5.0",
     "node-sass": "^7.0.1",
     "react": "^18.2.0",
@@ -24,8 +25,20 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build-stage": "webpack --config webpack.prod.js --env=stage",
+    "build-prod": "webpack --config webpack.prod.js --env=prod",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
+  },
+  "babel": {
+    "presets": [
+      "@babel/react",
+      "@babel/env"
+    ],
+    "plugins": [
+      "@babel/proposal-class-properties",
+      "@babel/plugin-transform-runtime"
+    ]
   },
   "eslintConfig": {
     "extends": [
