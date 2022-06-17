@@ -3,7 +3,7 @@ const common = require('./webpack.config.js');
 const path = require('path');
 
 module.exports = env => {
-  let baseUrl = 'https://stage.communication-scaffold.oodleslab.com/public';
+  let baseUrl = 'https://stage.communication-scaffold.oodleslab.com/';
 
   return merge(common, {
     mode: 'production',
